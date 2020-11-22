@@ -5,3 +5,9 @@
 .flashes h4 {
     line-height: 2;
 }
+
+#logo {
+    max-width: 5rem;
+    overflow: hidden;
+}
+

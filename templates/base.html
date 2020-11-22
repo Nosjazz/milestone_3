@@ -16,7 +16,7 @@
     <!-- Top nav -->
           <nav class="nav-extended text-shadow light-blue darken-1">
             <div class="nav-wrapper">
-            <a href="{{ url_for('get_feedback') }}" class="brand-logo">HTTAC</a>
+            <a href="{{ url_for('get_feedback') }}" class="brand-logo"><img src="{{ url_for('static', filename='images/HTTAC.jpg') }}" id="logo"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('get_feedback') }}">Home</a></li>
