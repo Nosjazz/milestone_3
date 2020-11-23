@@ -8,15 +8,17 @@
 
 #logo {
     max-width: 4.25rem;
-    overflow: auto;
 }
 
 #logo_banner {
     width: 100%;
-    margin-bottom: 2rem;
 }
 
 footer {
     margin-top: 2rem;
     line-height: 4;
+}
+
+.no-gutter {
+    margin-top: -5px;
 }
