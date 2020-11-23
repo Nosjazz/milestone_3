@@ -19,10 +19,22 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_feedback")
-def get_feedback():
+@app.route("/home")
+def home():
     feedback = mongo.db.feedback.find()
-    return render_template("tasks.html", feedback=feedback)
+    return render_template("home.html", feedback=feedback)
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/reviews")
+def reviews():
+    return render_template("reviews.html")
+
+@app.route("/contactUs")
+def contactUs():
+    return render_template("contactUs.html")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
