@@ -53,9 +53,9 @@
         <div>
             <img src="{{ url_for('static', filename='images/HTTAC_banner.jpg') }}" id="logo_banner">
             <div class="row center-align text-shadow light-blue darken-1 no-gutter">
-                <div class="col m4 s12">Interested</div>
-                <div class="col m4 s12">Show Interest</div>
-                <div class="col m4 s12">Pledged</div>       
+                <div class="col m4 s12 blanc">Interested</div>
+                <div class="col m4 s12 blanc">Show Interest</div>
+                <div class="col m4 s12 blanc">Pledged</div>       
             </div>
         </div>
     </header>
@@ -65,7 +65,7 @@
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <div class="row flashes">
+                    <div class="row flashes no-gutter">
                         <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
                     </div>
                 {% endfor %}
@@ -79,7 +79,7 @@
     </main>
 
 
-    <footer class="center-align text-shadow light-blue darken-1">
+    <footer class="center-align blanc light-blue darken-1">
         <p>HTTAC© 2020, All right reserved<p>
     </footer>
 
