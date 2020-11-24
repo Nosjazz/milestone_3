@@ -3,7 +3,10 @@
 
 <section class="">
     <h3 class="center-align h3_section">Home</h3>
-    <div class="row ">
+    <div class="row center-align">
+            <h4 class="center-align">
+                The Project
+            </h4>
         <div class="col m6 s12">
             <p> 
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et tristique ex, quis facilisis nulla. 
@@ -26,16 +29,19 @@
             </p>
         </div>
         <div class="col m12 center-align">
-            <a class="light-blue darken-1 btn ">Read More</a>
+            <a href="{{ url_for('about') }}" class="light-blue darken-1 btn ">Read More</a>
         </div>
     </div>
 </section>
 <section class="">
     <div class="row">
-      <div class="col s2 left">
+      <div class="col m2 hide-on-small-only left">
         <img src="{{ url_for('static', filename='images/Home_pic.jpeg') }}" id="home_pic">
       </div>
-      <div class="col s10 right">
+      <div class="col m10 s12 right">
+            <h4 class="center-align">
+                The team
+            </h4>
             <p> 
                 Nunc pharetra lectus non efficitur varius. Nam id nisl est. Quisque ultrices leo eu rutrum interdum. 
                 Fusce nibh libero, commodo et lobortis non, ultrices sit amet velit. Sed euismod eleifend leo, nec imperdiet libero vestibulum vitae. 
@@ -45,19 +51,49 @@
                 Aenean pretium, felis id volutpat auctor, nunc eros tempor justo, vitae dictum ante dui non tortor. 
                 Curabitur vel justo finibus ante finibus dignissim pharetra bibendum dui. 
             </p>
+      </div>
+        <div class="col m12 center-align">
+                <a href="{{ url_for('contactUs') }}" class="light-blue darken-1 btn ">Read More</a>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="row center-align">
+        <div class="col l4 m6 s12 review_home">
+            Review 1
+            <p> 
+                Nunc pharetra lectus non efficitur varius. Nam id nisl est. Quisque ultrices leo eu rutrum interdum. 
+                Fusce nibh libero, commodo et lobortis non, ultrices sit amet velit. Sed euismod eleifend leo, nec imperdiet libero vestibulum vitae. 
+            </p>
+        </div>
+        <div class="col l4 m6 s12 review_home">
+            Review 2
             <p> 
                 Nunc pharetra lectus non efficitur varius. Nam id nisl est. Quisque ultrices leo eu rutrum interdum. 
                 Fusce nibh libero, commodo et lobortis non, ultrices sit amet velit. Sed euismod eleifend leo, nec imperdiet libero vestibulum vitae. 
                 Quisque ornare purus magna, semper pellentesque ex pulvinar eget. Sed fermentum feugiat venenatis. 
             </p>
-      </div>
+        </div>
+        <div class="col l4 m6 s12 review_home">
+            Review 3
+            <p> 
+                Nunc pharetra lectus non efficitur varius. Nam id nisl est. Quisque ultrices leo eu rutrum interdum. 
+                Quisque ornare purus magna, semper pellentesque ex pulvinar eget. Sed fermentum feugiat venenatis. 
+            </p>
+        </div>
+        <div class="col l4 m6 s12 review_home">
+            Review 4
+            <p> 
+                Fusce nibh libero, commodo et lobortis non, ultrices sit amet velit. Sed euismod eleifend leo, nec imperdiet libero vestibulum vitae. 
+                Quisque ornare purus magna, semper pellentesque ex pulvinar eget. Sed fermentum feugiat venenatis. 
+            </p>
+        </div>
         <div class="col m12 center-align">
-                <a class="light-blue darken-1 btn ">Read More</a>
-            </div>
+            <a href="{{ url_for('reviews') }}" class="light-blue darken-1 btn ">Read More</a>
+        </div>
     </div>
 </section>
-
-
+    
     {% for feed in feedback %}
         {{ feed.name }}<br>
         {{ feed.surename }}<br>
@@ -65,6 +101,6 @@
         {{ feed.interested }}<br>
         {{ feed.pledged }}<br>
         {{ feed.amount }}<br>
-    {% endfor %}
-    
+        {{ feed.review }}<br><br>
+    {% endfor %}    
 {% endblock %}
