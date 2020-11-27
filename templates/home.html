@@ -60,35 +60,21 @@
 </section>
 <section>
     <div class="row center-align">
+     {% for feed in feedback %}
         <div class="col l4 m6 s12 review_home center-align">
-            Review 1
-            <p> 
-                Nunc pharetra lectus non efficitur varius. Nam id nisl est. Quisque ultrices leo eu rutrum interdum. 
-                Fusce nibh libero, commodo et lobortis non, ultrices sit amet velit. Sed euismod eleifend leo, nec imperdiet libero vestibulum vitae. 
+        {% if feed.interested == true %}
+            <h4>{{ feed.name }}</h4>
+            <p class="green"> 
+                {{ feed.review }}  
             </p>
-        </div>
-        <div class="col l4 m6 s12 review_home center-align">
-            Review 2
-            <p> 
-                Nunc pharetra lectus non efficitur varius. Nam id nisl est. Quisque ultrices leo eu rutrum interdum. 
-                Fusce nibh libero, commodo et lobortis non, ultrices sit amet velit. Sed euismod eleifend leo, nec imperdiet libero vestibulum vitae. 
-                Quisque ornare purus magna, semper pellentesque ex pulvinar eget. Sed fermentum feugiat venenatis. 
+            {% else %}
+            <h4>{{ feed.name }}</h4>
+            <p class="red"> 
+                {{ feed.review }}  
             </p>
+            {% endif %}
         </div>
-        <div class="col l4 m6 s12 review_home center-align">
-            Review 3
-            <p> 
-                Nunc pharetra lectus non efficitur varius. Nam id nisl est. Quisque ultrices leo eu rutrum interdum. 
-                Quisque ornare purus magna, semper pellentesque ex pulvinar eget. Sed fermentum feugiat venenatis. 
-            </p>
-        </div>
-        <div class="col l4 m6 s12 review_home">
-            Review 4
-            <p> 
-                Fusce nibh libero, commodo et lobortis non, ultrices sit amet velit. Sed euismod eleifend leo, nec imperdiet libero vestibulum vitae. 
-                Quisque ornare purus magna, semper pellentesque ex pulvinar eget. Sed fermentum feugiat venenatis. 
-            </p>
-        </div>
+        {% endfor %} 
         <div class="col m12 center-align">
             <a href="{{ url_for('reviews') }}" class="light-blue darken-1 btn ">Read More</a>
         </div>

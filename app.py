@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    feedback = mongo.db.feedback.find()
+    feedback = list(mongo.db.feedback.find())
     return render_template("home.html", feedback=feedback)
 
 @app.route("/about")
