@@ -1,7 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
 
- <h3 class="center-align">Contact Us</h3>
+<h3 class="center-align">Contact Us</h3>
+    
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('contactUs') }}">
+        <div class="card-panel">
+            <div class="row">
+        <!-- Name -->
+            <div class="input-field col m6 s12">
+                <i class="fas fa-user prefix light-blue-text text-darken-4"></i>
+                <input id="name" name="name" type="text" minlength="2" maxlength="15" required class="validate">
+                <label for="name">Name*</label>
+            </div>
+        <!-- Surename -->
+            <div class="input-field col m6 s12">
+                <i class="fas fa-users prefix light-blue-text text-darken-4"></i>
+                <input id="surename" name="surename" type="text" minlength="2" maxlength="15" class="validate">
+                <label for="surename">Surename</label>
+            </div>
+        <!-- email -->
+            <div class="input-field col m12">
+                <i class="fas fa-envelope prefix light-blue-text text-darken-4"></i>
+                <input id="email" name="email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="validate">
+                <label for="email">Email*</label>
+            </div>  
+        <!-- Message -->
+            <div class="input-field col m12">
+                <i class="fas fa-comment-dots prefix light-blue-text text-darken-4"></i>
+                <textarea id="message" name="message" type="text" requried class="validate materialize-textarea" maxlength="500" data-length="500"></textarea>
+                <label for="message">Your Message*</label>
+            </div>  
+        <!-- Send -->
+            <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
+                Send <i class="fas fa-sign-in-alt"></i>
+            </button>
+            </div>
+        </div>
+    </form>
+</div>
+        
 
 
 {% endblock %}
