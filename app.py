@@ -110,8 +110,8 @@ def logout():
 @app.route("/reviewAdd", methods=["GET", "POST"])
 def reviewAdd():
     if request.method == "POST":
-        interested = "true" if request.form.get("interested") else "false"
-        pledged = "true" if request.form.get("pledged") else "false"
+        interested = True if request.form.get("interested") else False
+        pledged = True if request.form.get("pledged") else False
         comment = {
             "name": request.form.get("name"),
             "surname": request.form.get("surname"),
@@ -120,10 +120,9 @@ def reviewAdd():
             "pledged": pledged,
             "amount": request.form.get("amount"),
             "review": request.form.get("review"),
-            "created_by": session["user"]
         }
-    mongo.db.feedback.insert_one(comment)
-    flash("Review Successfully Added")
+        mongo.db.feedback.insert_one(comment)
+        flash("Review Successfully Added")
     return render_template("reviewAdd.html")
 
 
