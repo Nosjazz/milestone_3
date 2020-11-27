@@ -59,14 +59,17 @@
     </div>
 </section>
 <section>
+    <!-- For each review in database -->
     <div class="row center-align">
      {% for feed in feedback %}
         <div class="col l4 m6 s12 review_home center-align">
+        <!-- If interested value is true -->
         {% if feed.interested == true %}
             <h4>{{ feed.name }}</h4>
             <p class="green"> 
                 {{ feed.review }}  
             </p>
+        <!-- If interested value is false -->
             {% else %}
             <h4>{{ feed.name }}</h4>
             <p class="red"> 
@@ -75,6 +78,7 @@
             {% endif %}
         </div>
         {% endfor %} 
+        <!-- End for each review in database -->
         <div class="col m12 center-align">
             <a href="{{ url_for('reviews') }}" class="light-blue darken-1 btn ">Read More</a>
         </div>
