@@ -10,25 +10,32 @@
         <!-- Name -->
             <div class="input-field col m6 s12">
                 <i class="fas fa-user prefix light-blue-text text-darken-4"></i>
-                <input id="name" name="name" type="text" minlength="2" maxlength="15" required class="validate">
+                <input id="name" name="name" type="text" minlength="2" maxlength="15"
+                     class="validate" value="{{ feed.feed_name }}" required>
                 <label for="name">Name*</label>
             </div>
         <!-- Surename -->
             <div class="input-field col m6 s12">
                 <i class="fas fa-users prefix light-blue-text text-darken-4"></i>
-                <input id="surename" name="surename" type="text" minlength="2" maxlength="15" class="validate">
+                <input id="surename" name="surename" type="text"
+                    value="{{ feed.feed_surename }}" minlength="2" maxlength="15" class="validate">
                 <label for="surename">Surename</label>
             </div>
         <!-- email -->
             <div class="input-field col s12">
                 <i class="fas fa-envelope prefix light-blue-text text-darken-4"></i>
-                <input id="email" name="email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="validate">
+                <input id="email" name="email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                     value="{{ feed.feed_email }}" class="validate">
                 <label for="email">Email*</label>
             </div>  
         <!-- Interested -->
             <div class="switch col m6 s12">
                 <label for="interested">
-                <input id="interested" name="interested" type="checkbox">
+                {% if feed.interested == "on" %}
+                    <input id="interested" name="interested" type="checkbox">
+                {% else %}
+                    <input id="interested" name="interested" type="checkbox">
+                {% endif %}
                 <span class="lever"></span>
                 Interested?
                 </label>
@@ -36,7 +43,11 @@
             <!-- Pledged -->
             <div class="switch col m6 s12">
                 <label for="pledged">
-                <input id="pledged" name="pledged" type="checkbox">
+                {% if feed.pledged == "on" %}
+                    <input id="pledged" name="pledged" type="checkbox" checked>
+                {% else %}
+                    <input id="pledged" name="pledged" type="checkbox">
+                {% endif %}
                 <span class="lever "></span>
                 Wanna pledge?
                 </label>
@@ -44,17 +55,22 @@
             <!-- Pledged Amount-->
             <div class="input-field col s12">
                 <i class="fas fa-euro-sign prefix light-blue-text text-darken-4"></i>
-                <input id="amount" name="amount" type="number" class="validate">
+                <input id="amount" name="amount" type="number" class="validate"  value="{{ feed.feed_amount }}">
                 <label for="amount">Amount</label>
             </div>
         <!-- Review -->
             <div class="input-field col m12">
                 <i class="fas fa-comment-dots prefix light-blue-text text-darken-4"></i>
-                <textarea id="review" name="review" type="text" requried class="validate materialize-textarea"></textarea>
+                <textarea id="review" name="review" type="text" requried class="validate materialize-textarea">
+                    {{- feed.feed_review -}}
+                </textarea>
                 <label for="review">Your Review*</label>
             </div>  
         <!-- Send -->
-            <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
+            <a href="{{ url_for('home') }}" class="btn-large red text-shadow col s4">
+                Cancel <i class="fas fa-times-circle"></i>
+            </a>
+            <button type="submit" class="col s8 btn-large light-blue darken-4 text-shadow">
                 Edit <i class="fas fa-edit"></i>
             </button>
             </div>

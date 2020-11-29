@@ -70,7 +70,7 @@
                     <h4>{{ feed.name }}</h4>
                 </div>
                 <div class="col s4">
-                    <a href="#" class="btn-small light-blue lighten-1">Edit</a>
+                    <a href="{{ url_for('reviewEdit', feed_id=feed._id) }}" class="btn-small light-blue lighten-1">Edit</a>
                 </div>
             </div>
             <p class="green"> 
