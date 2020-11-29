@@ -125,6 +125,10 @@ def reviewAdd():
         flash("Review Successfully Added")
     return render_template("reviewAdd.html")
 
+@app.route("/reviewEdit/<feed_id>", methods=["GET", "POST"])
+def reviewEdit(feed_id):
+    feed = mongo.db.feedback.find_one({"_id": ObjectId(feed_id)})
+    return render_template("reviewEdit.html", feed=feed)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
