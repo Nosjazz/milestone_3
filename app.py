@@ -146,6 +146,12 @@ def reviewEdit(feed_id):
     feed = mongo.db.feedback.find_one({"_id": ObjectId(feed_id)})
     return render_template("reviewEdit.html", feed=feed)
 
+@app.route("/reviewDeleted/<feed_id>")
+def reviewDeleted(feed_id):
+    mongo.db.feedback.remove({"_id": ObjectId(feed_id)})
+    flash("Review Successfully Deleted")
+    return redirect(url_for("home"))
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
