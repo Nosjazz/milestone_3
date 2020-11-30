@@ -120,13 +120,29 @@ def reviewAdd():
             "pledged": pledged,
             "amount": request.form.get("amount"),
             "review": request.form.get("review"),
+            "created_by": session["user"]
         }
-        mongo.db.feedback.insert_one(comment)
+        mongo.db.feedback.insert_on(comment)
         flash("Review Successfully Added")
     return render_template("reviewAdd.html")
 
 @app.route("/reviewEdit/<feed_id>", methods=["GET", "POST"])
 def reviewEdit(feed_id):
+    if request.method == "POST":
+        interested = True if request.form.get("interested") else False
+        pledged = True if request.form.get("pledged") else False
+        submit = {
+            "name": request.form.get("name"),
+            "surname": request.form.get("surname"),
+            "email": request.form.get("email"),
+            "interested": interested,
+            "pledged": pledged,
+            "amount": request.form.get("amount"),
+            "review": request.form.get("review"),
+            "created_by": session["user"]
+        }
+        mongo.db.feedback.update({"_id": ObjectId(feed_id)}, submit)
+        flash("Review Successfully Updated")
     feed = mongo.db.feedback.find_one({"_id": ObjectId(feed_id)})
     return render_template("reviewEdit.html", feed=feed)
 

@@ -69,9 +69,11 @@
                 <div class="col s8">
                     <h4>{{ feed.name }}</h4>
                 </div>
+                {% if session.user|lower == feed.created_by|lower %}
                 <div class="col s4">
                     <a href="{{ url_for('reviewEdit', feed_id=feed._id) }}" class="btn-small light-blue lighten-1">Edit</a>
                 </div>
+                {% endif %}
             </div>
             <p class="green"> 
                 {{ feed.review }}  
@@ -82,9 +84,11 @@
                 <div class="col s8">
                     <h4>{{ feed.name }}</h4>
                 </div>
+                {% if session.user|lower == feed.created_by|lower %}
                 <div class="col s4">
                     <a href="{{ url_for('reviewEdit', feed_id=feed._id) }}" class="btn-small light-blue lighten-1">Edit</a>
                 </div>
+                {% endif %}
             </div>
             <p class="red"> 
                 {{ feed.review }}  
