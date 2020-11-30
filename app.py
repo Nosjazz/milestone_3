@@ -122,7 +122,7 @@ def reviewAdd():
             "review": request.form.get("review"),
             "created_by": session["user"]
         }
-        mongo.db.feedback.insert_on(comment)
+        mongo.db.feedback.insert_one(comment)
         flash("Review Successfully Added")
     return render_template("reviewAdd.html")
 
