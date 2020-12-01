@@ -55,9 +55,9 @@
         <div>
             <img src="{{ url_for('static', filename='images/HTTAC_banner.jpg') }}" id="logo_banner">
             <div class="row center-align text-shadow light-blue darken-1 no-gutter">
-                <div class="col m4 s12 blanc">Interested</div>
+                <div class="col m4 s12 blanc"> {{ feed|sum(attribute='interested') }} People Interested</div>
                 <div class="col m4 s12 blanc">Show Interest</div>
-                <div class="col m4 s12 blanc">Pledged</div>       
+                <div class="col m4 s12 blanc">€ Pledged</div>       
             </div>
         </div>
     </header>
