@@ -30,6 +30,7 @@ def about():
 
 @app.route("/reviews")
 def reviews():
+    feedback = list(mongo.db.feedback.find())
     return render_template("reviews.html")
 
 @app.route("/contactUs")

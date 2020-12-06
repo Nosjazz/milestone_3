@@ -3,69 +3,70 @@
 
  <h3 class="center-align">Reviews</h3>
 <section>
-    <div class="row center-align">
-        <div class="col l4 m12 review card-panel">
-            Review 1
-            <p> 
-                Nunc pharetra lectus non efficitur varius. Nam id nisl est. Quisque ultrices leo eu rutrum interdum. 
-                Fusce nibh libero, commodo et lobortis non, ultrices sit amet velit. Sed euismod eleifend leo, nec imperdiet libero vestibulum vitae. 
-            </p>
-        </div>
-        <div class="col l4 m12 review card-panel">
-            Review 2
-            <p> 
-                Nunc pharetra lectus non efficitur varius. Nam id nisl est. Quisque ultrices leo eu rutrum interdum. 
-                Fusce nibh libero, commodo et lobortis non, ultrices sit amet velit. Sed euismod eleifend leo, nec imperdiet libero vestibulum vitae. 
-                Quisque ornare purus magna, semper pellentesque ex pulvinar eget. Sed fermentum feugiat venenatis. 
-            </p>
-        </div>
-        <div class="col l4 m12review card-panel">
-            Review 3
-            <p> 
-                Nunc pharetra lectus non efficitur varius. Nam id nisl est. Quisque ultrices leo eu rutrum interdum. 
-                Quisque ornare purus magna, semper pellentesque ex pulvinar eget. Sed fermentum feugiat venenatis. 
-            </p>
-        </div>
-        <div class="col l4 m12 review card-panel">
-            Review 4
-            <p> 
-                Fusce nibh libero, commodo et lobortis non, ultrices sit amet velit. Sed euismod eleifend leo, nec imperdiet libero vestibulum vitae. 
-                Quisque ornare purus magna, semper pellentesque ex pulvinar eget. Sed fermentum feugiat venenatis. 
-            </p>
-        </div>
-        <div class="col l4 m12 review card-panel">
-            Review 5
-            <p> 
-                Nunc pharetra lectus non efficitur varius. Nam id nisl est. Quisque ultrices leo eu rutrum interdum. 
-                Fusce nibh libero, commodo et lobortis non, ultrices sit amet velit. Sed euismod eleifend leo, nec imperdiet libero vestibulum vitae. 
-            </p>
-        </div>
-        <div class="col l4 m12 review card-panel">
-            Review 6
-            <p> 
-                Nunc pharetra lectus non efficitur varius. Nam id nisl est. Quisque ultrices leo eu rutrum interdum. 
-                Fusce nibh libero, commodo et lobortis non, ultrices sit amet velit. Sed euismod eleifend leo, nec imperdiet libero vestibulum vitae. 
-                Quisque ornare purus magna, semper pellentesque ex pulvinar eget. Sed fermentum feugiat venenatis. 
-            </p>
-        </div>
-        <div class="col l4 m12 review card-panel">
-            Review 7
-            <p> 
-                Nunc pharetra lectus non efficitur varius. Nam id nisl est. Quisque ultrices leo eu rutrum interdum. 
-                Quisque ornare purus magna, semper pellentesque ex pulvinar eget. Sed fermentum feugiat venenatis. 
-            </p>
-        </div>
-        <div class="col l4 m12 review card-panel">
-            Review 8
-            <p> 
-                Fusce nibh libero, commodo et lobortis non, ultrices sit amet velit. Sed euismod eleifend leo, nec imperdiet libero vestibulum vitae. 
-                Quisque ornare purus magna, semper pellentesque ex pulvinar eget. Sed fermentum feugiat venenatis. 
-            </p>
-        </div>
+    <div class="row center-align ">
+        {% for feed in feedback %}
+        <ul class="collapsible col l4 m12 review card-panel">
+            <li>
+                <div class="collapsible-header">
+                    <i class=""></i>{{ feed.name }}
+                </div>
+                <div class="collapsible-body">
+                    {{ feed.review }}<br>
+                    {{ feed.interested }}<br>
+                    {{ feed.pledged }}<br>
+                    {{ feed.amount }}<br>
+                </div>
+            </li>
+        </ul>
+    {% endfor %}
+
+    
+
+
+        <ul class="collapsible col l4 m12 review card-panel">
+            <li>
+                <div class="collapsible-header"><i class=""></i>First</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+        </ul>
+        <ul class="collapsible col l4 m12 review card-panel">
+            <li>
+                <div class="collapsible-header"><i class=""></i>First</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+        </ul>
+        <ul class="collapsible col l4 m12 review card-panel">
+            <li>
+                <div class="collapsible-header"><i class=""></i>First</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+        </ul>
+        <ul class="collapsible col l4 m12 review card-panel">
+            <li>
+                <div class="collapsible-header"><i class=""></i>First</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+        </ul>
+        <ul class="collapsible col l4 m12 review card-panel">
+            <li>
+                <div class="collapsible-header"><i class=""></i>First</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+        </ul>
         <div class="col m12 center-align">
             <a href="{{ url_for('reviews') }}" class="light-blue darken-1 btn ">Read More</a>
         </div>
     </div>
 </section>
+
+    {% for feed in feedback %}
+        {{ feed.name }}<br>
+        {{ feed.surename }}<br>
+        {{ feed.email }}<br>
+        {{ feed.interested }}<br>
+        {{ feed.pledged }}<br>
+        {{ feed.amount }}<br>
+        {{ feed.review }}<br><br>
+    {% endfor %} 
 
 {% endblock %}
