@@ -56,7 +56,13 @@
             <img src="{{ url_for('static', filename='images/HTTAC_banner.jpg') }}" id="logo_banner">
             <div class="row center-align text-shadow light-blue darken-1 no-gutter">
                 <div class="col m4 s12 blanc"> People Interested</div>
-                <div class="col m4 s12 blanc">Show Interest</div>
+                <div class="col m4 s12 blanc">
+                    {% if session.user %}
+                    <a href="{{ url_for('reviewAdd') }}" class="waves-effect waves-light btn">Show Interest</a>
+                    {% else %}
+                    <a href="{{ url_for('register') }}" class="waves-effect waves-light btn">Show Interest</a>
+                    {% endif %}
+                </div>
                 <div class="col m4 s12 blanc">€ Pledged</div>       
             </div>
         </div>
