@@ -1,9 +1,17 @@
 .container {
-    max-width: 85%;
+    max-width: 95%;
+}
+
+.margbot {
+    margin-bottom: 20px;
 }
 
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0,0,0,0.5)
+}
+
+.lineheight {
+    line-height: 3;
 }
 
 .flashes h4 {
