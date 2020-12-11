@@ -58,9 +58,9 @@
                 <div class="col m4 s12 blanc"> People Interested</div>
                 <div class="col m4 s12 blanc">
                     {% if session.user %}
-                    <a href="{{ url_for('reviewAdd') }}" class="waves-effect waves-light btn">Show Interest</a>
+                    <a href="{{ url_for('reviewAdd') }}" class="interest waves-effect waves-light darken-4 light-blue btn-small">Show Interest</a>
                     {% else %}
-                    <a href="{{ url_for('register') }}" class="waves-effect waves-light btn">Show Interest</a>
+                    <a href="{{ url_for('register') }}" class="interest waves-effect waves-light darken-4 light-blue btn-small">Show Interest</a>
                     {% endif %}
                 </div>
                 <div class="col m4 s12 blanc">€ Pledged</div>       

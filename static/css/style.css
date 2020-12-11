@@ -18,6 +18,9 @@
     width: 100%;
 }
 
+.interest {
+    border-radius: 3%;
+}
 
 .no-gutter {
     margin-top: -5px;
