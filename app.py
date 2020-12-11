@@ -1,4 +1,4 @@
-import os
+import os, time
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -56,8 +56,10 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
+        username = request.form.get("username").lower()
         flash("Registration Successful!")
-        return render_template(url_for("profile", username=session["user"]))
+        time.sleep(10)
+        return render_template(url_for("profile", username=username))
 
     return render_template("register.html")
 
@@ -97,7 +99,7 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    
+
     if session["user"]:
         return render_template("profile.html", username=username, feedback=feedback)
 
