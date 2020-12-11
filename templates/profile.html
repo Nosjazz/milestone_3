@@ -7,6 +7,26 @@
             <h3 class="center-align light-blue-text text-darken-4">
                 {{ username }}'s Profile
             </h3>
+            <div class="row center-align ">
+        {% for feed in feedback if session.user|lower == feed.created_by|lower %}
+        <ul class="collapsible col l4 m12 review">
+            <li>
+                <div class="collapsible-header">
+                    <i class=""></i>{{ feed.name }}
+                    <div class="col s4">
+                    <a href="{{ url_for('reviewEdit', feed_id=feed._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                    </div>
+                </div>
+                
+                <div class="collapsible-body">
+                    {{ feed.review }}<br>
+                    {{ feed.interested }}<br>
+                    {{ feed.pledged }}<br>
+                    {{ feed.amount }}<br>
+                </div>
+            </li>
+        </ul>
+    {% endfor %}
         </div>
     </div>
 </div>
