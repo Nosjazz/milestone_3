@@ -22,6 +22,12 @@
     max-width: 4.25rem;
 }
 
+@media screen and (max-width: 1007px) { 
+    .logo {
+        max-width: 4rem;
+        }
+} 
+
 #logo_banner {
     width: 100%;
 }
@@ -70,7 +76,7 @@ h4 {
     .review {
         max-width: 100%;
             }
-        } 
+} 
 
 
 .btn-small {
