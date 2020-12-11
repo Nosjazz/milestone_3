@@ -3,7 +3,3 @@ $(document).ready(function () {
     $('textarea#message').characterCounter();
     $('.collapsible').collapsible();
 });
-
-$(#register).setTimeout(function(){ 
-    alert("Creating your Profile"); }, 3000
-);

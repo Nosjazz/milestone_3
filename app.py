@@ -1,4 +1,4 @@
-import os, time
+import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -58,8 +58,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         username = request.form.get("username").lower()
         flash("Registration Successful!")
-        time.sleep(10)
-        return render_template(url_for("profile", username=username))
+        return redirect(url_for("profile", username=username))
 
     return render_template("register.html")
 
