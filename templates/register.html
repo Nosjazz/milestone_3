@@ -1,10 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
- <h3 class="center-align">Register</h3>
-
 <div class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+    <form class="col s12 m6 " method="POST" action="{{ url_for('register') }}">
         <div class="card-panel grey lighten-5">
         <!-- Username -->
             <div class="row">
@@ -30,12 +28,19 @@
                 </div>
         </div>
     </form>
+    <div class="col m6 center-align">
+        <div class="card-panel grey lighten-5 register_market">
+            <h4>Register today,</h4>
+            <h5 class="padding_1">And join the HTTAC community!</h5>
+            <p class="padding_2">Join us today and share with the world your ideas on the project, receive latest news and much more!<p>
+        </div>
+    </div>
 </div>
 
 <div class="row">
-    <div class="col s12">
+    <div class="col s12 ">
         <p class="center-align">
-            New here? <a href="{{ url_for('login')}}" class="light-blue-text text-darken-4"> Log In</a>
+            Already have an account? <a href="{{ url_for('login')}}" class="light-blue-text text-darken-4"> Log In</a>
         </p>
     </div>
 </div> 
