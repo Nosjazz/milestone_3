@@ -55,8 +55,9 @@
 <section>
 
     <!-- For each review in database -->
+  
     <div class="row center-align">
-     {% for feed in feedback %}
+     {% for feed in feedback[0:3] %}
         <div class="col l4 m6 s12 review_home center-align">
         <!-- If interested value is true -->
         {% if feed.interested == true %}
