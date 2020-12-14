@@ -69,12 +69,12 @@
             <!-- Send -->
             <div class="row">  
             <a href="{{ url_for('home') }}" class="btn-large orange text-shadow col s4">
-                Cancel <i class="fas fa-times-circle"></i>
+                Cancel <i class="fas fa-undo"></i>
             </a>
             <button type="submit" class="col s8 btn-large light-blue darken-4 text-shadow">
                 Edit <i class="fas fa-edit"></i>
             </button>
-            <a href="{{ url_for('reviewDeleted', feed_id=feed._id) }}">
+            <a href="{{ url_for('reviewDeleted', feed_id=feed._id) }}" class="btn-large red delete_full">
                 Deleted review <i class="fas fa-times-circle"></i>
             </a>
             </div>
