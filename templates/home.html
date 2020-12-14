@@ -53,20 +53,25 @@
     </div>
 </section>
 <section>
-
-    <!-- For each review in database -->
-  
     <div class="row center-align">
-     {% for feed in feedback[0:3] %}
-        <div class="col l4 m6 s12 review_home center-align">
+    <!-- For each review in database -->
+     {% for feed in feedback[0:2] %}
         <!-- If interested value is true -->
         {% if feed.interested == true %}
+        <div class="col m5 s12 review_home left">
             <div class="row">
-                <div class="col s8">
-                    <h4>{{ feed.name }}</h4>
+                <div class="col s10">                    
+                    <i class="fas fa-star"></i>
+                    {{ feed.name }}
+                    <span class="recommends_home">recommends HHTAC</span>  
+                    {% if feed.pledged == true %}
+                    <span class="recommends_home">, and is willing to pledged!</span>
+                    {% else %}
+                        !
+                    {% endif %}                  
                 </div>
                 {% if session.user|lower == feed.created_by|lower %}
-                <div class="col s4">
+                <div class="col s2">
                     <a href="{{ url_for('reviewEdit', feed_id=feed._id) }}" class="btn-small light-blue lighten-1">Edit</a>
                 </div>
                 {% endif %}
@@ -74,14 +79,16 @@
             <p class="green"> 
                 {{ feed.review }}  
             </p>
+        
         <!-- If interested value is false -->
             {% else %}
+        <div class="col m5 s12 review_home right">
             <div class="row">
-                <div class="col s8">
+                <div class="col s10">
                     <h4>{{ feed.name }}</h4>
                 </div>
                 {% if session.user|lower == feed.created_by|lower %}
-                <div class="col s4">
+                <div class="col s2">
                     <a href="{{ url_for('reviewEdit', feed_id=feed._id) }}" class="btn-small light-blue lighten-1">Edit</a>
                 </div>
                 {% endif %}
@@ -92,9 +99,9 @@
             {% endif %}
         </div>
         {% endfor %} 
-
-    <!-- End for each review in database -->
     </div>
+    <!-- End for 2 first review in database -->
+  
     <div class="center-align">
             <a href="{{ url_for('reviews') }}" class="light-blue darken-1 btn ">Read More</a>
     </div>
