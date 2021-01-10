@@ -49,7 +49,7 @@
         </div>
     </div>
     <div class="col m12 center-align margbot">
-        <a href="{{ url_for('contactUs') }}" class="light-blue darken-1 btn ">Read More</a>
+        <a href="{{ url_for('contactUs') }}" class="light-blue darken-1 btn ">Contact Us</a>
     </div>
 </section>
 <section>
@@ -73,7 +73,7 @@
                 </div>
                 {% if session.user|lower == feed.created_by|lower %}
                 <div class="col s2">
-                    <a href="{{ url_for('reviewEdit', feed_id=feed._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                    <a href="{{ url_for('reviewEdit', feed_id=feed._id) }}" class="btn-small light-blue darken-4">Edit</a>
                 </div>
                 {% endif %}
             </div>
@@ -90,7 +90,7 @@
                 </div>
                 {% if session.user|lower == feed.created_by|lower %}
                 <div class="col s2">
-                    <a href="{{ url_for('reviewEdit', feed_id=feed._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                    <a href="{{ url_for('reviewEdit', feed_id=feed._id) }}" class="btn-small light-blue darken-4">Edit</a>
                 </div>
                 {% endif %}
             </div>

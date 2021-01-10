@@ -17,7 +17,7 @@
                     </div>
                     {% if session.user|lower == feed.created_by|lower %}
                     <div class="col s2">
-                        <a href="{{ url_for('reviewEdit', feed_id=feed._id) }}" class="btn-small light-blue lighten-1">Edit</a>
+                        <a href="{{ url_for('reviewEdit', feed_id=feed._id) }}" class="btn-small light-blue darken-4">Edit</a>
                     </div>
                     {% endif %}
                 </div>
