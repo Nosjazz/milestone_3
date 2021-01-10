@@ -60,15 +60,16 @@
         {% if feed.interested == true %}
         <div class="col m5 s12 review_home left">
             <div class="row">
-                <div class="col s10">                    
-                    <i class="fas fa-star"></i>
-                    {{ feed.name }}
-                    <span class="recommends_home">recommends HHTAC</span>  
-                    {% if feed.pledged == true %}
-                    <span class="recommends_home">, and is willing to pledged!</span>
-                    {% else %}
-                        !
-                    {% endif %}                  
+                <div class="col s10">                                        
+                    <p class="large">
+                        <i class="fas fa-star"></i>    
+                        {{ feed.name }}
+                        <span class="recommends_home">recommends HHTAC!</span>  
+                        {% if feed.pledged == true %}
+                        <span class="recommends_home">, and is willing to pledged</span>
+                        {% else %}
+                        {% endif %}  
+                    </p>
                 </div>
                 {% if session.user|lower == feed.created_by|lower %}
                 <div class="col s2">
@@ -76,8 +77,8 @@
                 </div>
                 {% endif %}
             </div>
-            <p class="green"> 
-                {{ feed.review }}  
+            <p class="italic"> 
+                "{{ feed.review }}"
             </p>
         
         <!-- If interested value is false -->
@@ -85,7 +86,7 @@
         <div class="col m5 s12 review_home right">
             <div class="row">
                 <div class="col s10">
-                    <h4>{{ feed.name }}</h4>
+                    <p class="large">{{ feed.name }}</p>
                 </div>
                 {% if session.user|lower == feed.created_by|lower %}
                 <div class="col s2">
@@ -93,8 +94,8 @@
                 </div>
                 {% endif %}
             </div>
-            <p class="red"> 
-                {{ feed.review }}  
+            <p class="italic"> 
+                "{{ feed.review }}"
             </p>
             {% endif %}
         </div>

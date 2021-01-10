@@ -2,6 +2,15 @@ body {
     background-color: #fafafa;
 }
 
+.italic {
+font-style: italic;
+}
+
+.large {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 .container {
     max-width: 95%;
 }

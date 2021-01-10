@@ -3,70 +3,54 @@
 
  <h3 class="center-align">Reviews</h3>
 <section>
-    <div class="row center-align ">
-        {% for feed in feedback %}
-        <ul class="collapsible col l4 m12 review card-panel">
-            <li>
-                <div class="collapsible-header">
-                    <i class=""></i>{{ feed.name }}
+<div class="row center-align">
+    <!-- For each review in database -->
+     {% for feed in feedback %}
+        <!-- If interested value is true -->
+        {% if feed.interested == true %}
+        <div class="col s12 review_home left">
+            <div class="row">
+                <div class="col s10">                                        
+                    <p class="large">
+                        <i class="fas fa-star"></i>    
+                        {{ feed.name }}
+                        <span class="recommends_home">recommends HHTAC!</span>  
+                        {% if feed.pledged == true %}
+                        <span class="recommends_home">, and is willing to pledged</span>
+                        {% else %}
+                        {% endif %}  
+                    </p>
+                </div>
                 {% if session.user|lower == feed.created_by|lower %}
-                <div class="col s4">
+                <div class="col s2">
                     <a href="{{ url_for('reviewEdit', feed_id=feed._id) }}" class="btn-small light-blue lighten-1">Edit</a>
                 </div>
                 {% endif %}
+            </div>
+            <p class="italic"> 
+                "{{ feed.review }}"
+            </p>
+        
+        <!-- If interested value is false -->
+            {% else %}
+        <div class="col s12 review_home right">
+            <div class="row">
+                <div class="col s10">
+                    <p class="large">{{ feed.name }}</p>
                 </div>
-                <div class="collapsible-body">
-                    {{ feed.review }}<br>
-                    {{ feed.interested }}<br>
-                    {{ feed.pledged }}<br>
-                    {{ feed.amount }}<br>
+                {% if session.user|lower == feed.created_by|lower %}
+                <div class="col s2">
+                    <a href="{{ url_for('reviewEdit', feed_id=feed._id) }}" class="btn-small light-blue lighten-1">Edit</a>
                 </div>
-            </li>
-        </ul>
-    {% endfor %}
-
-    
-        <ul class="collapsible col l4 m12 review card-panel">
-            <li>
-                <div class="collapsible-header"><i class=""></i>First</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-        </ul>
-        <ul class="collapsible col l4 m12 review card-panel">
-            <li>
-                <div class="collapsible-header"><i class=""></i>First</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-        </ul>
-        <ul class="collapsible col l4 m12 review card-panel">
-            <li>
-                <div class="collapsible-header"><i class=""></i>First</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-        </ul>
-        <ul class="collapsible col l4 m12 review card-panel">
-            <li>
-                <div class="collapsible-header"><i class=""></i>First</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-        </ul>
-        <ul class="collapsible col l4 m12 review card-panel">
-            <li>
-                <div class="collapsible-header"><i class=""></i>First</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-        </ul>
+                {% endif %}
+            </div>
+            <p class="italic"> 
+                "{{ feed.review }}"
+            </p>
+            {% endif %}
+        </div>
+        {% endfor %} 
     </div>
 </section>
-
-    {% for feed in feedback %}
-        {{ feed.name }}<br>
-        {{ feed.surename }}<br>
-        {{ feed.email }}<br>
-        {{ feed.interested }}<br>
-        {{ feed.pledged }}<br>
-        {{ feed.amount }}<br>
-        {{ feed.review }}<br><br>
-    {% endfor %} 
 
 {% endblock %}
