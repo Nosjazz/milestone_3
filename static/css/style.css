@@ -79,6 +79,7 @@ h4 {
 .review_home {
     background-color: #bbdefb;
     margin-top: 1rem;
+    border-radius: 1%;
 }
 
 .review {
