@@ -33,7 +33,7 @@ def reviews():
     feedback = list(mongo.db.feedback.find())
     return render_template("reviews.html", feedback=feedback)
 
-@app.route("/contactUs")
+@app.route("/contactUs", methods=["GET", "POST"])
 def contactUs():
     return render_template("contactUs.html")
 
