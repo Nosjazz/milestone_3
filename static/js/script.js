@@ -5,7 +5,7 @@ $(document).ready(function () {
 });
 
 function sendMail(contactForm) {
-    emailjs.send("gmail", "template_ds0eavp", {
+    emailjs.send("service_sni5gk2", "template_ds0eavp", {
         "from_name": contactForm.name.value,
         "from_email": contactForm.email.value,
         "message": contactForm.message.value
@@ -16,5 +16,7 @@ function sendMail(contactForm) {
         },
         function(error) {
             console.log("FAILED", error);
-        });
+        }
+    );
+    return alert("You're message has been sent!");
 }
