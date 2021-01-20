@@ -10,7 +10,7 @@
         {% if feed.interested == true %}
         <div class="col s12 review_home left">
             <div class="row">
-                <div class="col s10">                                        
+                <div class="col s12">                                        
                     <p class="large">
                         <i class="fas fa-star"></i>    
                         {{ feed.name }}
@@ -35,7 +35,7 @@
             {% else %}
         <div class="col s12 review_home right">
             <div class="row">
-                <div class="col s10">
+                <div class="col s12">
                     <p class="large">{{ feed.name }}</p>
                 </div>
                 {% if session.user|lower == feed.created_by|lower %}
