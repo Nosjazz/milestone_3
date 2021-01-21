@@ -4,7 +4,7 @@ Welcome Nosjazz,
 
 [View the live project here.](https://data-3.herokuapp.com/home)
 
-This website has been created in order to complete the 2nd milestone project of the code institute fullstack diploma. This is a todo list with simple feature for day-to-day activities, excluding longer term goals such as weekly, monthly, etc with local storage to ensure tracking along the day.
+This website has been created in order to complete the 3rd milestone project of the code institute fullstack diploma. This is a prelaunch website with a landing page centralizing the information, a About page giving more information about the project, a reviews page to centralize all reviews written, a contact us page, and a login/logout function.  HTML, CSS, JS, Python and MongoDB as well as Flask and Jquery were used. 
 
 
 ## User Experience (UX)
@@ -13,20 +13,17 @@ This website has been created in order to complete the 2nd milestone project of 
 
     -   #### First Time Visitor Goals
 
-        1. As a First Time Visitor, I want to easily understand the main purpose of the application and learn more about the organisation and feature.
+        1. As a First Time Visitor, I want to easily understand the main purpose of the project, leave if review and have the option to contact the website owner directly.
         2. As a First Time Visitor, I want to be see a visually compellent design.
+        3. As a First Time Visitor, I want to be able to see reviews from other visitors.
 
     -   #### Returning Visitor Goals
 
         1. As a Returning Visitor, I want to find back the information I entered
-        2. As a Returning Visitor, I want to find a way to filter between ongoing and completed activities.
-
-    -   #### Frequent User Goals
-        1. As a Frequent User, I want to check to be able to refresh all the items added at once.
 
 -   ### Design
     -   #### Colour Scheme
-        -   The main colours used are purple and white to have a high contrast, low eyes strain application.
+        -   The main colours used are blue and white to have a high contrast, low eyes strain application.
     -   #### Typography
         -   The Poppins font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Poppins is a simple font that is appealing for this purpose.
         
