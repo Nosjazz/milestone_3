@@ -24,18 +24,22 @@ def home():
     feedback = list(mongo.db.feedback.find())
     return render_template("home.html", feedback=feedback)
 
+
 @app.route("/about")
 def about():
     return render_template("about.html")
+
 
 @app.route("/reviews")
 def reviews():
     feedback = list(mongo.db.feedback.find())
     return render_template("reviews.html", feedback=feedback)
 
+
 @app.route("/contactUs", methods=["GET", "POST"])
 def contactUs():
     return render_template("contactUs.html")
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -100,15 +104,18 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username, feedback=feedback)
+        return render_template("profile.html",
+                               username=username, feedback=feedback)
 
     return redirect(url_for("login"))
+
 
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
 
 @app.route("/reviewAdd", methods=["GET", "POST"])
 def reviewAdd():
@@ -128,6 +135,7 @@ def reviewAdd():
         mongo.db.feedback.insert_one(comment)
         flash("Review Successfully Added")
     return render_template("reviewAdd.html")
+
 
 @app.route("/reviewEdit/<feed_id>", methods=["GET", "POST"])
 def reviewEdit(feed_id):
@@ -149,13 +157,15 @@ def reviewEdit(feed_id):
     feed = mongo.db.feedback.find_one({"_id": ObjectId(feed_id)})
     return render_template("reviewEdit.html", feed=feed)
 
+
 @app.route("/reviewDeleted/<feed_id>")
 def reviewDeleted(feed_id):
     mongo.db.feedback.remove({"_id": ObjectId(feed_id)})
     flash("Review Successfully Deleted")
     return redirect(url_for("home"))
 
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
