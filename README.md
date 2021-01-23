@@ -76,6 +76,8 @@ This website has been created in order to complete the 3rd milestone project of 
 
 ## Testing
 
+### Validators 
+
 The CSS, JavaScript and Python Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
 -   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - No error
