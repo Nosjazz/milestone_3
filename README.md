@@ -32,7 +32,7 @@ This website has been created in order to complete the 3rd milestone project of 
 
 *   ### Wireframes
 
-    -   Home Page [Wireframe](https://github.com/Nosjazz/todo_list-milestone2/blob/master/assets/pictures/wireframe.jpg). Due to time contraints, the project was adaptated to conserve the minimum features, removing the weekly and monthly tracking and the second filtre by date.
+    -   Home Page [Wireframe](https://github.com/Nosjazz/milestone_3/tree/master/static/images/wireframes). Due to time contraints, the project was adaptated to conserve the minimum features, removing the Interested and Pledged below the banner, while also removing the banners for the contact Us, login and review Add page.
 
 ## Features
 
@@ -40,7 +40,11 @@ This website has been created in order to complete the 3rd milestone project of 
 
 -   Interactive elements
 
+-   Profile Creation
 
+-   Review Creation
+
+-   Review editing when Review-userID matches the userID of logged session
 
 ## Technologies Used
 
