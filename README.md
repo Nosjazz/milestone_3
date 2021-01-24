@@ -151,7 +151,83 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Heroku 
 
-XXXXXXXXXXXXXXXXXXXX
+#### Prerequisites: Install Git and the Heroku CLI
+Git installation instructions
+
+Heroku CLI installation instructions
+
+#### Steps
+
+1. Track your codebase in a Git repository
+Heroku’s build system uses Git, the popular version control system. Consequently, your codebase needs to be committed to a Git repository in order to be deployed.
+
+Git installation
+First-time Git setup
+If you are already using another version control system, consult its documentation for help exporting a snapshot to Git.
+
+2. Add a Heroku Git remote
+Every Heroku app has its own Heroku-hosted Git repo. You deploy new versions of your app by pushing your code changes to this repo. In order to do that, your local Git repo needs to know the URL of the Heroku-hosted repo.
+
+Complete the step Creating a Heroku remote to add the Heroku-hosted repo as a Git remote.
+
+3. Add a Procfile
+Commit a text file to your app’s root directory that is named Procfile without a file extension. This file tells Heroku which command(s) to run to start your app. These commands are probably the same as the ones you use to run your code on your local machine.
+
+Here’s an example Procfile for a simple Node.js app:
+
+web: node app.js
+The web process type defined above tells Heroku to start up your web application by running node app.js. The web process type is special, because it’s the only process type that can receive HTTP traffic from the web (i.e., from your app’s users).
+
+You can specify additional process types on separate lines in your Procfile, but process types besides web can’t receive web traffic. Process types can be any alphanumeric string (hyphens and underscores are also allowed).
+
+For example (Rails):
+
+web: bundle exec rails server -p $PORT
+worker: bundle exec rake jobs:work
+Consult language-specific guides for more information on creating a Procfile for your chosen language and framework.
+
+Learn more about the Procfile
+
+4. Listen on the correct port
+On your local machine, your app’s web server can listen on any open, unreserved port. On Heroku, however, it must listen on a specific port.
+
+This specific port is indicated by the PORT environment variable. When your web server starts up on Heroku, make sure it’s listening on the port number specified by PORT:
+
+app.listen(process.env.PORT);
+To avoid having to set the PORT environment variable when running on your local machine, you can replace the line above with the following:
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
+In this case, the server will listen on port 8000 if the PORT environment variable isn’t set.
+
+The examples above are for a simple Node.js app that uses Express. Consult your programming language’s documentation and Heroku’s language-specific guides for details on both reading environment variables and configuring your web server to listen on a particular port.
+
+5. Use a database or object storage instead of writing to your local filesystem
+If your app currently writes data to its local filesystem for persistent storage (including to a local SQLite database), on Heroku it must instead write that data to one of the following locations (depending on your use case):
+
+A managed database service (such as Heroku Postgres)
+A managed object storage service (such as Amazon S3)
+This requirement exists because Heroku dynos (the Linux containers that run your code) have an ephemeral filesystem. Your app’s dynos are automatically replaced at least once daily (this is called dyno cycling), and each time they are, any data your app has written to the local filesystem is lost.
+
+Initially, this “stateless” design pattern for web apps can seem surprising and confusing. Learn more about the methodology behind it.
+
+Provisioning a database
+Heroku Postgres is Heroku’s managed SQL database service, and it is the recommended relational database for Heroku apps. Its free hobby-dev plan provides a good starting place for smaller apps, and for testing out the Heroku platform.
+
+Learn how to provision Heroku Postgres, and then also run Postgres on your local machine to ensure parity between your development and production environments.
+
+If you don’t want to use Heroku Postgres, add-ons for other relational databases (including MySQL and MongoDB) are available in the Heroku Elements Marketplace.
+
+Provisioning an object storage service
+Learn about using Amazon S3 on Heroku.
+
+Add-ons for managing an S3 bucket are also available in the Heroku Elements Marketplace.
+
+6. Complete language-specific setup
+The changes above apply to all Heroku apps, regardless of programming language. In addition to them, language-specific changes might be necessary for your codebase.
 
 ## Credits
 
