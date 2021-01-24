@@ -14,8 +14,7 @@ This website has been created in order to complete the 3rd milestone project of 
     -   #### First Time Visitor Goals
 
         1. As a First Time Visitor, I want to easily understand the main purpose of the project, leave if review and have the option to contact the website owner directly.
-        2. As a First Time Visitor, I want to be see a visually compellent design.
-        3. As a First Time Visitor, I want to be able to see reviews from other visitors.
+        2. As a First Time Visitor, I want to be able to see reviews from other visitors.
 
     -   #### Returning Visitor Goals
 
@@ -37,8 +36,8 @@ This website has been created in order to complete the 3rd milestone project of 
 ## Features
 
 -   Responsive on all device sizes
-<h2 align="center"><img src="./static/images/readme/responsivedesktop.PNG"></h2>
-<h2 align="center"><img src="./static/images/readme/responsivemobile.PNG"></h2>
+<h2 align="center"><img src="./static/images/readme/responsivedesktop.PNG">Desktop</h2>
+<h2 align="center"><img src="./static/images/readme/responsivemobile.PNG">Mobile</h2>
 
 -   Profile Creation
 <h2 align="center"><img src="./static/images/readme/register.PNG"></h2>
@@ -93,7 +92,16 @@ The CSS, JavaScript and Python Validator Services were used to validate every pa
 
 ### Testing User Stories from User Experience (UX) Section
 
+#### First Time Visitor Goals
+1. As a First Time Visitor, I want to easily understand the main purpose of the project, leave if review and have the option to contact the website owner directly.
+    Upon entering the website, the visitor have an extract of the about page, presentation of the team and 2 reviews among the existing reviews, the "show interest" button also encourage the visitor to take action, redirecting to the register page if not logged in, or directly to the add review page when logged in.
 
+2. As a First Time Visitor, I want to be able to see reviews from other visitors.
+    There are an extract of reviews in the home page, as well as en entire page didicated to the reviews accessible from the navbar, or Readmore from the home page.
+
+#### Returning Visitor Goals
+1. As a Returning Visitor, I want to find back the information I entered
+    Thanks to the login functionality, the returning visitor is able to find back all the information entered into the profile section, but is also able to edit his reviews.
 
 ### Further Testing
 
