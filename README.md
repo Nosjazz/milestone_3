@@ -41,6 +41,7 @@ This website has been created in order to complete the 3rd milestone project of 
 -   Interactive elements
 
 -   Profile Creation
+<h2 align="center"><img src="./static/images/readme/register.PNG"></h2>
 
 -   Review Creation
 
