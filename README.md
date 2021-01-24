@@ -48,6 +48,9 @@ This website has been created in order to complete the 3rd milestone project of 
 -   Review editing when Review-userID matches the userID of logged session
 <h2 align="center"><img src="./static/images/readme/reviewedit.PNG"></h2>
 
+-   Contact us page
+<h2 align="center"><img src="./static/images/readme/contact.PNG"></h2>
+
 ## Technologies Used
 
 ### Languages Used
@@ -105,7 +108,10 @@ The CSS, JavaScript and Python Validator Services were used to validate every pa
 
 ### Further Testing
 
-
+-   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
+-   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
+-   A large amount of testing was done to ensure that all functions were working correctly.
+-   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 ### Known Bugs
 
