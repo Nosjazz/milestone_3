@@ -37,15 +37,17 @@ This website has been created in order to complete the 3rd milestone project of 
 ## Features
 
 -   Responsive on all device sizes
-
--   Interactive elements
+<h2 align="center"><img src="./static/images/readme/responsivedesktop.PNG"></h2>
+<h2 align="center"><img src="./static/images/readme/responsivemobile.PNG"></h2>
 
 -   Profile Creation
 <h2 align="center"><img src="./static/images/readme/register.PNG"></h2>
 
 -   Review Creation
+<h2 align="center"><img src="./static/images/readme/reviewadd.PNG"></h2>
 
 -   Review editing when Review-userID matches the userID of logged session
+<h2 align="center"><img src="./static/images/readme/reviewedit.PNG"></h2>
 
 ## Technologies Used
 
