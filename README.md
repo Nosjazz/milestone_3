@@ -110,7 +110,14 @@ The CSS, JavaScript and Python Validator Services were used to validate every pa
 
 -   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
 -   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
--   A large amount of testing was done to ensure that all functions were working correctly.
+-   A large amount of testing was done to ensure that all functions and links were working correctly.
+        -   All elements of the navbar are working from all templates
+        -   The logo redirect to the home page
+        -   The Show interest redirect to regitser if not logged in, and to add review when logged in
+        -   The Read More button on the home page redirect to its appropriate pages (About, Contact Us, Reviews)
+        -   The register and login functions work as appropriate and return to the profile page
+        -   Adding and Editing review works as intended
+        
 -   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
 
 ### Known Bugs
